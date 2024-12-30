@@ -1,15 +1,14 @@
-import React from "react";
-import Users from "./pages/Users";
+// import Users from "./pages/Users";
 import { ThemeProvider } from "./context/ThemeContext";
 import Header from "./components/Header";
-import Content from "./pages/Content";
+// import Content from "./pages/Content";
 
 const App = () => {
   return (
     <ThemeProvider>
       <Header />
-      <Content />
-      <Users />
+      {/* <Content /> */}
+      {/* <Users /> */}
     </ThemeProvider>
   );
 };

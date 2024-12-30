@@ -67,7 +67,7 @@ export default function Users() {
       >
         Users
       </Typography>
-      <TableContainer component={Paper}>
+      <TableContainer component={Paper} sx={{}}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             <TableRow>
@@ -86,8 +86,6 @@ export default function Users() {
                 sx={{
                   "&:last-child td, &:last-child th": {
                     border: 0,
-                    background: "red",
-                    color: "white",
                   },
                 }}
               >
