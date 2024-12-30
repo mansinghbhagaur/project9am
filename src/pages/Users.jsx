@@ -83,12 +83,12 @@ export default function Users() {
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell>Id</TableCell>
-              <TableCell align="center">Name</TableCell>
-              <TableCell align="center">Username</TableCell>
-              <TableCell align="center">Phone</TableCell>
-              <TableCell align="center">Email</TableCell>
-              <TableCell align="center">Address</TableCell>
+              <TableCell sx={{ color: Theme[theme].color }}>Id</TableCell>
+              <TableCell align="center" sx={{ color: Theme[theme].color }}>Name</TableCell>
+              <TableCell align="center" sx={{ color: Theme[theme].color }}>Username</TableCell>
+              <TableCell align="center" sx={{ color: Theme[theme].color }}>Phone</TableCell>
+              <TableCell align="center" sx={{ color: Theme[theme].color }}>Email</TableCell>
+              <TableCell align="center" sx={{ color: Theme[theme].color }}>Address</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -99,16 +99,27 @@ export default function Users() {
                   "&:last-child td, &:last-child th": {
                     border: 0,
                   },
+                  backgroundColor: Theme[theme].background,
                 }}
               >
-                <TableCell component="th" scope="row">
+                <TableCell component="th" scope="row" sx={{ color: Theme[theme].color }}>
                   {row.id}
                 </TableCell>
-                <TableCell align="center">{row.name}</TableCell>
-                <TableCell align="center">{row.username}</TableCell>
-                <TableCell align="center">{row.phone}</TableCell>
-                <TableCell align="center">{row.email}</TableCell>
-                <TableCell align="center">{row.address.city}</TableCell>
+                <TableCell align="center" sx={{ color: Theme[theme].color }}>
+                  {row.name}
+                </TableCell>
+                <TableCell align="center" sx={{ color: Theme[theme].color }}>
+                  {row.username}
+                </TableCell>
+                <TableCell align="center" sx={{ color: Theme[theme].color }}>
+                  {row.phone}
+                </TableCell>
+                <TableCell align="center" sx={{ color: Theme[theme].color }}>
+                  {row.email}
+                </TableCell>
+                <TableCell align="center" sx={{ color: Theme[theme].color }}>
+                  {row.address.city}
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
