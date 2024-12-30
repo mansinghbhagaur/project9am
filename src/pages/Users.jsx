@@ -5,6 +5,7 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
+
 // import Paper from "@mui/material/Paper";
 // import Container from "@mui/material/Container";
 import {
@@ -14,10 +15,13 @@ import {
   Box,
   CircularProgress,
 } from "@mui/material";
+import { ThemeContext } from "../context/ThemeContext";
 
 export default function Users() {
+
   const [users, setUsers] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
+  const {theme} = React.useContext(ThemeContext);
 
   const FetchData = async () => {
     try {
@@ -33,6 +37,17 @@ export default function Users() {
       // setLoading(false);
     }
   };
+  const Theme = {
+    'light': {
+      background: '#fff',
+      color: '#000',
+    },
+    'black': {
+      background: '#000',
+      color: '#fff',
+    },
+  };
+
 
   React.useEffect(() => {
     FetchData();
@@ -47,8 +62,6 @@ export default function Users() {
           alignItems: "center",
           height: "100vh",
           background: "#ccc",
-          //     opacity: 0.5,
-          //     zIndex: -1000,
         }}
       >
         <CircularProgress color={"error"} />
@@ -59,7 +72,6 @@ export default function Users() {
     <Container maxWidth="xl">
       <Typography
         variant={"h4"}
-        //   fontSize={45}
         fontWeight={"bold"}
         mt={1}
         mb={1}
@@ -67,7 +79,7 @@ export default function Users() {
       >
         Users
       </Typography>
-      <TableContainer component={Paper} sx={{}}>
+      <TableContainer component={Paper} sx={{ backgroundColor: Theme[theme].background, color: Theme[theme].color }}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             <TableRow>
@@ -103,5 +115,6 @@ export default function Users() {
         </Table>
       </TableContainer>
     </Container>
-  );
+     );
 }
+
